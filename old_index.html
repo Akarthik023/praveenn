@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aalayaa | Authentic Taste of Tradition</title>
+  <meta
+    name="description"
+    content="Aalayaa is a premium pure vegetarian restaurant in Chennai serving tradition-led South Indian favourites with a modern dining experience."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7b1e1e;
+      --secondary: #d4af37;
+      --accent: #2e7d32;
+      --surface: #fff8e7;
+      --surface-strong: #f6ecd4;
+      --surface-dark: #2b100e;
+      --card: rgba(255, 250, 241, 0.72);
+      --text: #241716;
+      --muted: #6e6159;
+      --line: rgba(123, 30, 30, 0.12);
+      --shadow: 0 20px 45px rgba(61, 24, 18, 0.14);
+      --radius-lg: 30px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --container: min(1180px, calc(100vw - 40px));
+      --nav-height: 84px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(212, 175, 55, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(46, 125, 50, 0.12), transparent 22%),
+        linear-gradient(180deg, #fff9ef 0%, #fff2df 44%, #fffaf2 100%);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+      background-size: 16px 16px;
+      mask-image: radial-gradient(circle at center, black, transparent 85%);
+      z-index: -1;
+    }
+
+    .shell {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--secondary), #f2d67a);
+      box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.16);
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .section-head h2 {
+      margin: 16px 0 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 248, 231, 0.78);
+      border-bottom: 1px solid rgba(123, 30, 30, 0.08);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 190px;
+      max-width: 35vw;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 24px rgba(123, 30, 30, 0.14));
+      opacity: 0;
+      animation: enter3D 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .brand-copy strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      text-shadow: 0 0 18px rgba(212, 175, 55, 0.12);
+      opacity: 0;
+      animation: enter3D 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+    }
+
+    .brand-copy span {
+      color: #7d6153;
+      font-size: 0.84rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #5f4a44;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--secondary), transparent);
+      transition: transform 0.28s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #9c3328);
+      box-shadow: 0 16px 32px rgba(123, 30, 30, 0.22);
+    }
+
+    .button-secondary {
+      color: var(--primary);
+      border-color: rgba(123, 30, 30, 0.16);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .button-ghost {
+      color: #5f4a44;
+      border-color: rgba(123, 30, 30, 0.12);
+      background: transparent;
+    }
+
+    .hero {
+      position: relative;
+      padding: 48px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 90px 0 auto;
+      height: 460px;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(212, 175, 55, 0.22), transparent 24%),
+        radial-gradient(circle at 85% 40%, rgba(46, 125, 50, 0.16), transparent 20%),
+        linear-gradient(135deg, rgba(123, 30, 30, 0.08), rgba(255, 255, 255, 0));
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+      min-height: calc(100vh - var(--nav-height) - 60px);
+    }
+
+    .hero-copy h1 {
+      margin: 12px 0 18px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--primary);
+    }
+
+    .hero-brand-lockup {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    @keyframes enter3D {
+      0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(60deg) rotateX(20deg) translateZ(-200px);
+      }
+      100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px);
+      }
+    }
+
+    .hero-brand-name {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(5.2rem, 14vw, 9.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: var(--primary);
+      text-shadow: 0 0 34px rgba(212, 175, 55, 0.18);
+      opacity: 0;
+      animation: enter3D 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards, brandGlow 3.2s ease-in-out 1.8s infinite;
+    }
+
+    .hero-brand-name::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      bottom: -10px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(123, 30, 30, 0.2), var(--secondary), rgba(123, 30, 30, 0.2));
+      transform-origin: left;
+      animation: brandUnderline 2.8s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.28);
+    }
+
+    .hero-tagline {
+      margin: 0;
+      color: #7b5a34;
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero-copy p {
+      max-width: 560px;
+      margin: 0 0 26px;
+      color: #594740;
+      font-size: 1.04rem;
+      line-height: 1.9;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(123, 30, 30, 0.08);
+      box-shadow: 0 12px 30px rgba(123, 30, 30, 0.08);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .meta-pill strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stat {
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(123, 30, 30, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .hero-showcase {
+      position: relative;
+      padding: 34px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.22), transparent 28%),
+        linear-gradient(160deg, rgba(56, 20, 16, 0.98), rgba(123, 30, 30, 0.94));
+      color: #fff;
+      box-shadow: 0 40px 90px rgba(77, 30, 24, 0.25);
+      overflow: hidden;
+    }
+
+    .hero-showcase::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      filter: blur(2px);
+    }
+
+    .showcase-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .showcase-top h3,
+    .highlight-card h3,
+    .story-card h3 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+    }
+
+    .showcase-top span,
+    .highlight-card p,
+    .story-card p {
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.7;
+    }
+
+    .showcase-badge {
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .showcase-image {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 400px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.12), transparent 48%),
+        #190909;
+    }
+
+    .showcase-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      transform: scale(1.04);
+    }
+
+    .highlight-card {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      right: 24px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(24, 9, 8, 0.74);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .highlight-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 34px;
+    }
+
+    .story-card,
+    .contact-card,
+    .menu-panel,
+    .gallery-card,
+    .testimonial,
+    .dish-card,
+    .value-card {
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      border: 1px solid rgba(123, 30, 30, 0.09);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .story-card {
+      padding: 32px;
+      background:
+        linear-gradient(145deg, rgba(123, 30, 30, 0.95), rgba(71, 18, 18, 0.95)),
+        var(--card);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .story-card p {
+      margin: 18px 0 0;
+      max-width: 560px;
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .story-quote {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(123, 30, 30, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .story-quote p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #4d3b36;
+    }
+
+    .story-quote strong {
+      display: block;
+      margin-top: 18px;
+      color: var(--primary);
+      font-size: 0.92rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .value-card {
+      padding: 24px;
+    }
+
+    .value-card strong {
+      display: block;
+      margin: 14px 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, rgba(123, 30, 30, 0.14), rgba(212, 175, 55, 0.18));
+    }
+
+    .dishes {
+      background:
+        linear-gradient(180deg, rgba(123, 30, 30, 0.05), transparent 22%),
+        linear-gradient(180deg, #fff8ea, #fdf0e0);
+    }
+
+    .dish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .dish-card {
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 54px rgba(77, 30, 24, 0.18);
+    }
+
+    .dish-image {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #140707, #341313);
+    }
+
+    .dish-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      transform: scale(1.03);
+      transition: transform 0.45s ease;
+    }
+
+    .dish-card:hover .dish-image img {
+      transform: scale(1.08);
+    }
+
+    .dish-labels {
+      position: absolute;
+      inset: 18px 18px auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .dish-label,
+    .dish-price {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .dish-label {
+      background: rgba(46, 125, 50, 0.82);
+      color: #fff;
+    }
+
+    .dish-price {
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .dish-content {
+      padding: 24px;
+    }
+
+    .dish-content h3 {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+    }
+
+    .dish-content p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .dish-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dish-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(123, 30, 30, 0.06);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .menu-panel {
+      padding: 28px;
+    }
+
+    .menu-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .menu-tab {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(123, 30, 30, 0.12);
+      background: rgba(255, 255, 255, 0.68);
+      color: #5b4741;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .menu-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(123, 30, 30, 0.22);
+    }
+
+    .menu-count {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(123, 30, 30, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 36px rgba(77, 30, 24, 0.14);
+    }
+
+    .menu-thumb {
+      width: 92px;
+      height: 92px;
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(123, 30, 30, 0.12), rgba(212, 175, 55, 0.18)),
+        #f4e2ca;
+    }
+
+    .menu-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+
+    .menu-item header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .menu-item strong {
+      font-size: 1rem;
+    }
+
+    .menu-item .price {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .menu-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+
+    .menu-item footer {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .menu-item footer span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(46, 125, 50, 0.08);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 22px;
+    }
+
+    .gallery-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      position: relative;
+      min-height: 260px;
+    }
+
+    .gallery-card.media {
+      background: linear-gradient(180deg, #1c0909, #3f1a15);
+    }
+
+    .gallery-card.media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      transform: scale(1.03);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-card.content {
+      padding: 28px;
+      display: grid;
+      align-content: end;
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.24), transparent 28%),
+        linear-gradient(160deg, rgba(123, 30, 30, 0.92), rgba(37, 13, 13, 0.94));
+      color: #fff;
+    }
+
+    .gallery-card.content.light {
+      background:
+        radial-gradient(circle at top right, rgba(46, 125, 50, 0.18), transparent 24%),
+        linear-gradient(160deg, rgba(255, 249, 239, 0.86), rgba(250, 236, 214, 0.82));
+      color: var(--text);
+    }
+
+    .gallery-card h3 {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+    }
+
+    .gallery-card p {
+      margin: 0;
+      line-height: 1.8;
+      color: inherit;
+      opacity: 0.86;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      padding: 26px;
+    }
+
+    .stars {
+      margin-bottom: 16px;
+      color: var(--secondary);
+      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+    }
+
+    .testimonial p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 20px;
+      color: var(--primary);
+      font-size: 0.92rem;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(123, 30, 30, 0.08);
+    }
+
+    .contact-item label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .contact-item div,
+    .contact-item a {
+      color: #4f3f3a;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(123, 30, 30, 0.12);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--text);
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(123, 30, 30, 0.34);
+      box-shadow: 0 0 0 4px rgba(123, 30, 30, 0.08);
+    }
+
+    .map-card {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(123, 30, 30, 0.1);
+      box-shadow: var(--shadow);
+      min-height: 100%;
+      background: #f3ead8;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      border: 0;
+    }
+
+    .site-footer {
+      padding: 34px 0 50px;
+      border-top: 1px solid rgba(123, 30, 30, 0.08);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text);
+    }
+
+    .footer-brand img {
+      width: 88px;
+      object-fit: contain;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes brandGlow {
+      0%,
+      100% {
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
+      }
+      50% {
+        text-shadow: 0 0 34px rgba(212, 175, 55, 0.26);
+      }
+    }
+
+    @keyframes brandUnderline {
+      0%,
+      100% {
+        transform: scaleX(0.78);
+        opacity: 0.75;
+      }
+      50% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .gallery-grid,
+      .dish-grid,
+      .testimonial-grid,
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-stack {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 780px) {
+      :root {
+        --container: min(100vw - 28px, 100vw);
+        --nav-height: auto;
+      }
+
+      .nav,
+      .nav-links,
+      .footer-row {
+        flex-wrap: wrap;
+      }
+
+      .nav {
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        padding-bottom: 4px;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.6rem, 15vw, 4rem);
+      }
+
+      .hero-brand-name {
+        font-size: clamp(3.2rem, 18vw, 5rem);
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-image {
+        min-height: 320px;
+      }
+
+      .menu-item {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-thumb {
+        width: 100%;
+        height: 180px;
+      }
+
+      .gallery-stack {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="grain"></div>
+
+  <header class="site-header">
+    <div class="shell nav" id="nav"></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal" id="hero-copy"></div>
+        <div class="hero-showcase reveal" id="hero-showcase"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about-section">
+      <div class="shell about-grid">
+        <div class="story-card reveal" id="about-story"></div>
+        <div class="story-grid">
+          <div class="story-quote reveal" id="legacy-quote"></div>
+          <div class="values reveal" id="values"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dishes" id="signature_dishes">
+      <div class="shell">
+        <div class="section-head reveal" id="dishes-head"></div>
+        <div class="dish-grid" id="signature-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="shell">
+        <div class="section-head reveal" id="menu-head"></div>
+        <div class="menu-panel reveal">
+          <div class="menu-toolbar">
+            <div class="menu-tabs" id="menu-tabs"></div>
+            <div class="menu-count" id="menu-count"></div>
+          </div>
+          <div class="menu-grid" id="menu-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="shell">
+        <div class="section-head reveal" id="gallery-head"></div>
+        <div class="gallery-grid">
+          <div class="gallery-card media reveal">
+            <img src="./assets/site/dish-pepper-fry.jpg" alt="Aalayaa signature pepper fry">
+          </div>
+          <div class="gallery-stack">
+            <div class="gallery-card content reveal">
+              <h3>Banana Leaf Warmth</h3>
+              <p>A dining mood inspired by brass service, soft maroon textures, and family-style vegetarian hospitality.</p>
+            </div>
+            <div class="gallery-card media reveal">
+              <img src="./assets/site/dish-crispy-strips.jpg" alt="Aalayaa crispy strips platter">
+            </div>
+            <div class="gallery-card media reveal">
+              <img src="./assets/site/dish-chilli-bites.jpg" alt="Aalayaa chilli bites">
+            </div>
+            <div class="gallery-card content light reveal">
+              <h3>Modern Chennai Dining</h3>
+              <p>Clean service standards, rich flavours, and a polished family restaurant experience shaped for the next generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="shell">
+        <div class="section-head reveal" id="testimonials-head"></div>
+        <div class="testimonial-grid" id="testimonial-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="section-head reveal" id="contact-head"></div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="contact-list" id="contact-list"></div>
+            <form class="contact-form">
+              <input type="text" placeholder="Your name">
+              <input type="email" placeholder="Email address">
+              <textarea rows="5" placeholder="Tell us about your visit, table request, private dining, or catering requirement"></textarea>
+              <button type="button" class="button button-primary">Send Enquiry</button>
+            </form>
+          </div>
+          <div class="map-card reveal" style="display: flex; flex-direction: column;">
+            <div style="flex: 1; position: relative;">
+              <div style="position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); color: var(--primary);">Main Branch</div>
+              <iframe
+                title="Aalayaa Main Branch location map"
+                src="https://www.google.com/maps?q=Hotel+Aalayaa,Chennai&output=embed"
+                style="width: 100%; height: 100%; min-height: 260px; border: none; display: block;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div style="flex: 1; position: relative; border-top: 2px solid rgba(123, 30, 30, 0.1);">
+              <div style="position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); color: var(--primary);">Second Outlet</div>
+              <iframe
+                title="Aalayaa Second Outlet location map"
+                src="https://www.google.com/maps?q=HOTEL+AALAYAA+VEG+RESTAURANT,13.0749937,80.1249996&output=embed"
+                style="width: 100%; height: 100%; min-height: 260px; border: none; display: block;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <div class="footer-brand">
+        <img src="./assets/logo-aalayaa.png" alt="Aalayaa logo">
+        <div>
+          <strong>Aalayaa</strong>
+          <div>Authentic Taste of Tradition</div>
+        </div>
+      </div>
+      <div id="footer-copy"></div>
+    </div>
+  </footer>
+
+  <script>
+    const siteConfig = {
+      hotel: {
+        name: "Aalayaa",
+        tagline: "Authentic Taste of Tradition",
+        foundedDate: "14 November 2024",
+        servingSince: "2024",
+        type: "Pure Veg Restaurant",
+        location: "Chennai, India",
+        phone: "+91 44 4000 2024",
+        email: "hello@aalayaa.in",
+        hours: "Daily, 7:00 AM - 10:30 PM"
+      },
+      branding: {
+        primaryColor: "#7B1E1E",
+        secondaryColor: "#D4AF37",
+        accentColor: "#2E7D32",
+        backgroundColor: "#FFF8E7",
+        fontHeading: "Playfair Display",
+        fontBody: "Poppins"
+      },
+      sections: {
+        home: true,
+        about: true,
+        menu: true,
+        signatureDishes: true,
+        gallery: true,
+        testimonials: true,
+        contact: true
+      },
+      features: {
+        animations: true,
+        stickyNavbar: true,
+        menuFilter: true,
+        imageHoverEffects: true,
+        parallaxEffect: true
+      },
+      menuCategories: ["All", "Breakfast", "Lunch", "Dinner", "Snacks", "Sweets"],
+      legacyScript: "Founded on 14th November 2024, Aalayaa is more than just a restaurant - it is a celebration of heritage, purity, and timeless flavors. Inspired by the traditions of South Indian kitchens, every dish at Aalayaa carries the warmth of home-cooked meals and the richness of cultural legacy. From handpicked ingredients to age-old recipes, we bring you an experience that connects generations through food. We now proudly serve our guests across 2 outlets in Chennai."
+    };
+
+    const content = {
+      hero: {
+        titleLines: ["A premium dine-in destination", "for timeless vegetarian flavours.", "Crafted for Chennai."],
+        summary: "Aalayaa is designed as a brand-first vegetarian restaurant website - one that celebrates identity, signature dishes, premium ambience, and the warmth of dining in. From crisp breakfast favourites to indulgent house specials, every visual is tuned to feel elegant, rooted, and memorable.",
+        pills: [
+          { label: "Founded", value: "14 Nov 2024" },
+          { label: "Cuisine", value: "Pure Veg Classics" },
+          { label: "Location", value: "Chennai" }
+        ],
+        stats: [
+          { value: "5", label: "Display-only menu categories" },
+          { value: "100%", label: "Pure vegetarian kitchen" },
+          { value: "7AM", label: "Fresh dine-in breakfast service" }
+        ],
+        showcase: {
+          title: "Signature Spotlight",
+          subtitle: "Aalayaa Specials",
+          name: "Veg Mutton Chukka",
+          description: "Slow-finished with layered spice, rustic texture, and the kind of bold South Indian character that lingers long after the meal.",
+          image: "./assets/site/dish-mutton-chukka.jpg",
+          tags: ["Chef favourite", "Signature dish", "House special"]
+        }
+      },
+      about: {
+        heading: "A brand-led restaurant experience with a fresh beginning.",
+        description: "Aalayaa is shaped around strong identity cues: elegant presentation, category-led menu browsing, premium ambience, visible vegetarian trust marks, and storytelling rooted in tradition.",
+        valueProps: [
+          {
+            icon: "01",
+            title: "Tradition + Modern Dining",
+            description: "Classic South Indian warmth presented in a polished, premium format suited for family dining and everyday comfort."
+          },
+          {
+            icon: "02",
+            title: "Hygiene First",
+            description: "Clean service, quality ingredients, and a presentation language that signals care before the first bite even arrives."
+          },
+          {
+            icon: "03",
+            title: "Authentic Taste",
+            description: "Every section of the menu is built to feel recognisable, generous, and rooted in the flavours people return for."
+          }
+        ]
+      },
+      signatureDishes: [
+        {
+          name: "Veg Vanjaram Fish Fry",
+          price: "",
+          description: "Outside layer with Sea Black Stone Flower, Mashed Soya and Marinated Mushroom with South Indian Spices, slightly cooked with oil tawa fry.",
+          image: "./assets/site/dish-sea-fire.jpg",
+          tags: ["Fish Fry", "Signature"]
+        },
+        {
+          name: "Veg Fish Finger",
+          price: "",
+          description: "Tofu, Cauliflower, Vegetable Protein, Cassava tuber Cooked With Oil Fry.",
+          image: "./assets/site/dish-crispy-strips.jpg",
+          tags: ["Starter", "Crispy"]
+        },
+        {
+          name: "Veg Prawn 65",
+          price: "",
+          description: "Cassava Tuber, Potato Starch, Textured Soy, Konjac Powder.",
+          image: "./assets/site/dish-chilli-bites.jpg",
+          tags: ["Prawns", "Crispy"]
+        },
+        {
+          name: "Veg Prawn Pepper Fry",
+          price: "",
+          description: "Yummy, Crispy and Tasty Pepper Fry.",
+          image: "./assets/site/dish-pepper-fry.jpg",
+          tags: ["Prawns", "Spicy"]
+        },
+        {
+          name: "Veg Mutton Chukka",
+          price: "",
+          description: "Soy Flour, Soya Protein Isolate, Mashed Mushroom.",
+          image: "./assets/site/dish-mutton-chukka.jpg",
+          tags: ["Mutton", "Spicy"]
+        },
+        {
+          name: "Veg Mutton Kola Urundai",
+          price: "",
+          description: "Thick, Tangy and Tempting plant-based Mutton Kola Urundai.",
+          image: "./assets/site/dish-mushroom-roast.jpg",
+          tags: ["Mutton", "Starter"]
+        },
+        {
+          name: "Veg Mutton Kheema",
+          price: "",
+          description: "Rich and aromatic plant-based Mutton Kheema.",
+          image: "./assets/site/dish-sea-fire.jpg",
+          tags: ["Mutton", "Rich"]
+        },
+        {
+          name: "Veg Chicken 65",
+          price: "",
+          description: "Plant based soy, wheat, rice are used.",
+          image: "./assets/site/dish-crispy-strips.jpg",
+          tags: ["Chicken", "Crispy"]
+        },
+        {
+          name: "Veg Chicken Palipalayam",
+          price: "",
+          description: "Authentic taste of plant-based chicken Palipalayam.",
+          image: "./assets/site/dish-chilli-bites.jpg",
+          tags: ["Chicken", "Spicy"]
+        },
+        {
+          name: "Veg Chicken Pepper Fry",
+          price: "",
+          description: "Pepper-forward plant-based chicken preparation.",
+          image: "./assets/site/dish-pepper-fry.jpg",
+          tags: ["Chicken", "Pepper"]
+        },
+        {
+          name: "Veg Chicken Chettinadu Gravy",
+          price: "",
+          description: "Classic South Indian warmth presented in a polished, premium format.",
+          image: "./assets/site/dish-mutton-chukka.jpg",
+          tags: ["Chicken", "Gravy"]
+        },
+        {
+          name: "Veg Chicken Kheema",
+          price: "",
+          description: "Generous and rooted in the flavours people return for.",
+          image: "./assets/site/dish-mushroom-roast.jpg",
+          tags: ["Chicken", "Kheema"]
+        },
+        {
+          name: "Veg Chicken Lolipop",
+          price: "",
+          description: "Crunchy golden bites served hot.",
+          image: "./assets/site/dish-crispy-strips.jpg",
+          tags: ["Chicken", "Starter"]
+        },
+        {
+          name: "Veg Liver Pepper Fry",
+          price: "",
+          description: "Chana dal, Green Grams are endrosed firm structure, Mushroom, Lentils, Walnut.",
+          image: "./assets/site/dish-pepper-fry.jpg",
+          tags: ["Liver", "Pepper"]
+        },
+        {
+          name: "Veg Liver Pallipalayam",
+          price: "",
+          description: "Classic Pallipalayam style plant-based liver.",
+          image: "./assets/site/dish-chilli-bites.jpg",
+          tags: ["Liver", "Spicy"]
+        }
+      ],
+      menu: [
+        {
+          name: "Special Ghee Masala Dosa",
+          category: "Breakfast",
+          image: "./assets/site/dish-crispy-strips.jpg",
+          description: "Golden crisp dosa roasted in pure ghee, served with our signature sambar and three chutneys.",
+          tags: ["Classic", "Breakfast"]
+        },
+        {
+          name: "Idli Vada Combo",
+          category: "Breakfast",
+          image: "./assets/site/dish-sea-fire.jpg",
+          description: "Soft fluffy idlis paired with a crispy medu vada, immersed in hot sambar.",
+          tags: ["Popular", "Breakfast"]
+        },
+        {
+          name: "South Indian Special Meals",
+          category: "Lunch",
+          image: "./assets/site/dish-mutton-chukka.jpg",
+          description: "A grand feast featuring rice, sambar, rasam, kootu, poriyal, special kuzhambu, appalam, and sweet.",
+          tags: ["Lunch", "Traditional"]
+        },
+        {
+          name: "Bisi Bele Bath",
+          category: "Lunch",
+          image: "./assets/site/dish-chilli-bites.jpg",
+          description: "Aromatic lentil and rice dish cooked with mixed vegetables, ghee, and roasted spices.",
+          tags: ["Lunch", "Spicy"]
+        },
+        {
+          name: "Chappathi with Veg Kurma",
+          category: "Dinner",
+          image: "./assets/site/dish-crispy-strips.jpg",
+          description: "Soft whole wheat chappathis served with a rich, coconut-based mixed vegetable kurma.",
+          tags: ["Dinner", "Light"]
+        },
+        {
+          name: "Ghee Onion Rava Dosa",
+          category: "Dinner",
+          image: "./assets/site/dish-sea-fire.jpg",
+          description: "Crispy semolina dosa laced with onions, green chillies, and roasted in premium ghee.",
+          tags: ["Dinner", "Crispy"]
+        },
+        {
+          name: "Parotta with Salna",
+          category: "Dinner",
+          image: "./assets/site/dish-mutton-chukka.jpg",
+          description: "Flaky, layered South Indian parottas served with a deeply flavourful empty salna.",
+          tags: ["Dinner", "Street Style"]
+        },
+        {
+          name: "Chukka Bites Basket",
+          category: "Snacks",
+          image: "./assets/site/dish-chilli-bites.jpg",
+          description: "Crispy, shareable, and packed with masala notes for teatime cravings and table-sharing moments.",
+          tags: ["Snacks", "Shareable"]
+        },
+        {
+          name: "Kesari Delight",
+          category: "Sweets",
+          image: "./assets/site/dish-sea-fire.jpg",
+          description: "Traditional sweet notes reimagined with a restaurant-finish glaze and celebratory garnish cues.",
+          tags: ["Sweet", "Festival favourite"]
+        }
+      ],
+      testimonials: [
+        {
+          quote: "The menu has the confidence of a classic Chennai veg restaurant, but the look and plating feel more premium and current.",
+          author: "Family Dining Guest"
+        },
+        {
+          quote: "Aalayaa feels designed for trust. The clean presentation, warm colours, and straightforward menu sections make the place feel dependable instantly.",
+          author: "Weekend Brunch Visitor"
+        },
+        {
+          quote: "The signature dishes have the kind of bold flavour and memorable finish that make you recommend the restaurant to others right away.",
+          author: "First-Time Customer"
+        }
+      ],
+      contact: [
+        { label: "Main Branch", value: "Aalayaa, Chennai, Tamil Nadu, India" },
+        { label: "Second Outlet", value: "Hotel Aalayaa Veg Restaurant, Chennai" },
+        { label: "Phone", value: siteConfig.hotel.phone, href: "tel:+914440002024" },
+        { label: "Email", value: siteConfig.hotel.email, href: "mailto:hello@aalayaa.in" },
+        { label: "Hours", value: siteConfig.hotel.hours }
+      ]
+    };
+
+    const setBrandVariables = () => {
+      const root = document.documentElement;
+      root.style.setProperty("--primary", siteConfig.branding.primaryColor);
+      root.style.setProperty("--secondary", siteConfig.branding.secondaryColor);
+      root.style.setProperty("--accent", siteConfig.branding.accentColor);
+      root.style.setProperty("--surface", siteConfig.branding.backgroundColor);
+    };
+
+    const renderNav = () => {
+      const nav = document.getElementById("nav");
+      const links = [
+        { href: "#top", label: "Home" },
+        { href: "#about-section", label: "About" },
+        { href: "#menu", label: "Menu" },
+        { href: "#signature_dishes", label: "Signature Dishes" },
+        { href: "#gallery", label: "Gallery" },
+        { href: "#contact", label: "Contact" }
+      ];
+
+      nav.innerHTML = `
+        <a class="brand" href="#top" aria-label="${siteConfig.hotel.name} home">
+          <img class="brand-mark" src="./assets/logo-aalayaa.png" alt="${siteConfig.hotel.name} logo">
+          <div class="brand-copy">
+            <strong>${siteConfig.hotel.name}</strong>
+            <span>${siteConfig.hotel.tagline}</span>
+          </div>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          ${links.map((link) => `<a href="${link.href}">${link.label}</a>`).join("")}
+        </nav>
+      `;
+    };
+
+    const renderHero = () => {
+      const heroCopy = document.getElementById("hero-copy");
+      const heroShowcase = document.getElementById("hero-showcase");
+      const { hero } = content;
+
+      heroCopy.innerHTML = `
+        <span class="eyebrow">${siteConfig.hotel.type}</span>
+        <div class="hero-brand-lockup">
+          <p class="hero-brand-name">${siteConfig.hotel.name}</p>
+          <p class="hero-tagline">${siteConfig.hotel.tagline}</p>
+        </div>
+        <h1>
+          <span>${hero.titleLines[0]}</span>
+          <span>${hero.titleLines[1]}</span>
+          <span>${hero.titleLines[2]}</span>
+        </h1>
+        <p>${hero.summary}</p>
+        <div class="hero-meta">
+          ${hero.pills.map((pill) => `
+            <div class="meta-pill">
+              <strong>${pill.label}:</strong>
+              <span>${pill.value}</span>
+            </div>
+          `).join("")}
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Visit Us Today</a>
+          <a class="button button-secondary" href="#menu">Explore Our Menu</a>
+          <a class="button button-ghost" href="#signature_dishes">Discover Our Taste</a>
+        </div>
+        <div class="hero-stats">
+          ${hero.stats.map((stat) => `
+            <div class="stat">
+              <strong>${stat.value}</strong>
+              <span>${stat.label}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+
+      heroShowcase.innerHTML = `
+        <div class="showcase-top">
+          <div>
+            <span class="eyebrow">${hero.showcase.subtitle}</span>
+            <h3>${hero.showcase.title}</h3>
+          </div>
+          <div class="showcase-badge">Serving since ${siteConfig.hotel.servingSince}</div>
+        </div>
+        <div class="showcase-image">
+          <img src="${hero.showcase.image}" alt="${hero.showcase.name}">
+          <div class="highlight-card">
+            <h3>${hero.showcase.name}</h3>
+            <p>${hero.showcase.description}</p>
+            <div class="highlight-meta">
+              ${hero.showcase.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    };
+
+    const renderAbout = () => {
+      document.getElementById("about-story").innerHTML = `
+        <span class="eyebrow">About ${siteConfig.hotel.name}</span>
+        <h3>${content.about.heading}</h3>
+        <p>${content.about.description}</p>
+        <p>From handpicked ingredients to a polished service rhythm, the experience is shaped to feel both comforting and elevated. This is a young brand built with old-soul values: consistency, warmth, and food that honours tradition.</p>
+      `;
+
+      document.getElementById("legacy-quote").innerHTML = `
+        <p>${siteConfig.legacyScript}</p>
+        <strong>Legacy Story</strong>
+      `;
+
+      document.getElementById("values").innerHTML = content.about.valueProps.map((value) => `
+        <article class="value-card">
+          <div class="value-icon">${value.icon}</div>
+          <strong>${value.title}</strong>
+          <p>${value.description}</p>
+        </article>
+      `).join("");
+    };
+
+    const renderSectionHead = (id, eyebrow, title, description) => {
+      document.getElementById(id).innerHTML = `
+        <div>
+          <span class="eyebrow">${eyebrow}</span>
+          <h2>${title}</h2>
+        </div>
+        <p>${description}</p>
+      `;
+    };
+
+    const renderSignatureDishes = () => {
+      renderSectionHead(
+        "dishes-head",
+        "Signature Dishes",
+        "Showpiece plates designed to feel premium and memorable.",
+        "The strongest visuals from your uploaded PDF now lead the signature section so the site feels unmistakably Aalayaa and fully focused on dine-in appeal."
+      );
+
+      let gridHtml = content.signatureDishes.map((dish) => `
+        <article class="dish-card reveal">
+          <div class="dish-image">
+            <img src="${dish.image}" alt="${dish.name}">
+            <div class="dish-labels">
+              <span class="dish-label">Pure Veg</span>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3>${dish.name}</h3>
+            <p>${dish.description}</p>
+            <div class="dish-tags">
+              ${dish.tags.map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      document.getElementById("signature-grid").innerHTML = gridHtml;
+    };
+
+    const renderMenu = (activeCategory = "All") => {
+      renderSectionHead(
+        "menu-head",
+        "Config-Driven Menu",
+        "Display-only menu browsing with premium food cards and clear pricing.",
+        "The menu is rendered directly from JavaScript data so you can change categories, dish names, descriptions, prices, and images in one place later - with no ordering flow attached."
+      );
+
+      const tabs = document.getElementById("menu-tabs");
+      tabs.innerHTML = siteConfig.menuCategories.map((category) => `
+        <button class="menu-tab ${category === activeCategory ? "active" : ""}" data-category="${category}">
+          ${category}
+        </button>
+      `).join("");
+
+      const filtered = activeCategory === "All"
+        ? content.menu
+        : content.menu.filter((item) => item.category === activeCategory);
+
+      document.getElementById("menu-count").textContent = `${filtered.length} dishes shown`;
+      document.getElementById("menu-grid").innerHTML = filtered.map((item) => `
+        <article class="menu-item">
+          <div class="menu-thumb">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div>
+            <header>
+              <strong>${item.name}</strong>
+            </header>
+            <p>${item.description}</p>
+            <footer>
+              <span>${item.category}</span>
+              ${item.tags.map((tag) => `<span>${tag}</span>`).join("")}
+            </footer>
+          </div>
+        </article>
+      `).join("");
+
+      tabs.querySelectorAll(".menu-tab").forEach((tab) => {
+        tab.addEventListener("click", () => renderMenu(tab.dataset.category));
+      });
+    };
+
+    const renderGalleryHead = () => {
+      renderSectionHead(
+        "gallery-head",
+        "Gallery",
+        "Food-forward visuals with an ambience-led premium mood.",
+        "Your extracted dish images power the visual identity, while the supporting gallery cards reinforce ambience, dining mood, and the premium personality of Aalayaa."
+      );
+    };
+
+    const renderTestimonials = () => {
+      renderSectionHead(
+        "testimonials-head",
+        "Guest Impressions",
+        "Social-proof style copy designed for a premium vegetarian brand.",
+        "These are polished sample testimonials for launch presentation. You can swap them later for real customer quotes or Google review highlights."
+      );
+
+      document.getElementById("testimonial-grid").innerHTML = content.testimonials.map((item) => `
+        <article class="testimonial reveal">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>${item.quote}</p>
+          <strong>${item.author}</strong>
+        </article>
+      `).join("");
+    };
+
+    const renderContact = () => {
+      renderSectionHead(
+        "contact-head",
+        "Visit Aalayaa",
+        "Reservations, enquiries, catering, and daily dining.",
+        "The contact section keeps the layout practical for a dine-in restaurant brand: direct details, a clean enquiry form, and a map embed centered on Chennai for now."
+      );
+
+      document.getElementById("contact-list").innerHTML = content.contact.map((item) => `
+        <div class="contact-item">
+          <label>${item.label}</label>
+          ${item.href ? `<a href="${item.href}">${item.value}</a>` : `<div>${item.value}</div>`}
+        </div>
+      `).join("");
+    };
+
+    const renderFooter = () => {
+      document.getElementById("footer-copy").innerHTML = `
+        <div>${siteConfig.hotel.location} &middot; ${siteConfig.hotel.type}</div>
+        <div>Serving since ${siteConfig.hotel.servingSince}</div>
+      `;
+    };
+
+    const applySectionVisibility = () => {
+      const visibilityMap = {
+        "about-section": siteConfig.sections.about,
+        "menu": siteConfig.sections.menu,
+        "signature_dishes": siteConfig.sections.signatureDishes,
+        "gallery": siteConfig.sections.gallery,
+        "testimonials": siteConfig.sections.testimonials,
+        "contact": siteConfig.sections.contact
+      };
+
+      Object.entries(visibilityMap).forEach(([id, enabled]) => {
+        const node = document.getElementById(id);
+        if (node) {
+          node.hidden = !enabled;
+        }
+      });
+    };
+
+    const initReveal = () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    };
+
+    const initParallax = () => {
+      if (!siteConfig.features.parallaxEffect) return;
+      const showcase = document.querySelector(".hero-showcase");
+      const copy = document.querySelector(".hero-copy");
+      window.addEventListener("scroll", () => {
+        const offset = Math.min(window.scrollY, 320);
+        if (showcase) showcase.style.transform = `translateY(${offset * 0.08}px)`;
+        if (copy) copy.style.transform = `translateY(${offset * 0.04}px)`;
+      });
+    };
+
+    setBrandVariables();
+    renderNav();
+    renderHero();
+    renderAbout();
+    renderSignatureDishes();
+    renderMenu();
+    renderGalleryHead();
+    renderTestimonials();
+    renderContact();
+    renderFooter();
+    applySectionVisibility();
+    initReveal();
+    initParallax();
+  </script>
+</body>
+</html>
